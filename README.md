@@ -2,6 +2,8 @@
 Repository showing how to make ethereum account signed http requests from a Dapp
 to a meteor server using a smart contract to control access
 
+![Screenshot](ScreenShot.png)
+
 Pre-requisites
 --------------
 
