@@ -89,27 +89,14 @@ function checkUrl(request, instance) {
   var baseResourceUrl = baseUrl.substr('/resource'.length);
   var requestUrl = request.url;
   var requestBaseUrl = requestUrl.substr(0, baseResourceUrl.length);
-  console.log('baseUrl:', baseUrl);
-  console.log('baseResourceUrl:', baseResourceUrl);
-  console.log('requestUrl:', requestUrl);
-  console.log('requestBaseUrl:', requestBaseUrl);
+  //console.log('baseUrl:', baseUrl);
+  //console.log('baseResourceUrl:', baseResourceUrl);
+  //console.log('requestUrl:', requestUrl);
+  //console.log('requestBaseUrl:', requestBaseUrl);
 
   if(requestBaseUrl !== baseResourceUrl) {
-    throw new HttpError('bad url', 401);// unauthorized
+    throw new HttpError('url mismatch', 401);// unauthorized
   }
-  /*
-
-
-    // check resource part
-    if(studyShare.url() !== rootUrl + req.url) {
-      console.log("URL does not match");
-      console.log(studyShare.url() + '|');
-      console.log(req.url + '|');
-      res.writeHead(404);
-      res.end("");
-      return;
-    }
-  */
 }
 
 function getStatusCodeFromError(error) {
