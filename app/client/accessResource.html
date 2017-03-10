@@ -1,0 +1,11 @@
+<template name="accessResource">
+  <form id="nameForm" class="form-inline">
+    <div class="form-group">
+      <label for="url">URL</label>
+      <input type="text" size="48" class="form-control" id="url" value="{{url}}" placeholder="" readonly>
+    </div>
+    <button type="button" id="get" class="btn btn-default">Get</button>
+  </form>
+  <hr>
+  {{resource}}
+</template>

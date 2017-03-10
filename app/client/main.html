@@ -1,0 +1,40 @@
+<head>
+  <title>Ethereum Signed Http App</title>
+</head>
+
+<body>
+  <div class="container">
+      {{>main}}
+  </div>
+</body>
+
+<template name="main">
+  {{#if isWeb3Enabled}}
+    <div class="jumbotron">
+      <h1>Ethereum Signed Http</h1>
+      Welcome Ethereum account {{account}}.
+      <br>
+      <br>
+      You are currently on {{network}}.
+    </div>
+    <hr>
+    Create a new resource contract instance or attach to an existing one
+    <br>
+    <br>
+    {{>createResource}}
+    <hr>
+    {{#if contractValid}}
+    Get the resource with a signed http request
+    <br>
+    <br>
+    {{>accessResource}}
+    {{/if}}
+  {{else}}
+    <div class="jumbotron">
+      <h1>Ethereum Events</h1>
+      No web3 provider detected.  We recommend using google chrome with the
+      <a href="http://metamask.io">metamask extension</a>
+    </div>
+  {{/if}}
+
+</template>
