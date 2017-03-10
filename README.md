@@ -1,6 +1,6 @@
 # ethereum-signed-http
 Repository showing how to make ethereum account signed http requests from a Dapp
-to a node.js server using a smart contract
+to a meteor server using a smart contract to control access
 
 Pre-requisites
 --------------
@@ -31,7 +31,7 @@ Open your web browser to localhost:3000
 How to use
 ----------
 
-1) Paste the addrss of your ethereum account address into the "Recipient"
+1) Paste the address of your ethereum account address into the "Recipient"
    input text box.  Press "Create" - this will create a new Resource
    smart contract instance granting you access to the URL.
 
@@ -42,7 +42,7 @@ How to use
 3) Try switching to another metamask account and attempting to access
    the resource by pasting the address of a previously created resource
    into the "address" text input and pressing "attach" and then "get".  You
-   should get an unauthorized error.  You can also try accesing other
+   should get an unauthorized error.  You can also try accessing other
    resources and you should get an error.
 
 
