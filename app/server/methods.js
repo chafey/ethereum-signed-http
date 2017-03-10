@@ -6,7 +6,7 @@ Meteor.methods({
   'create' : (recipient, url) => {
     console.log('create', recipient, url);
 
-    // TODO: Authorize the client user!
+    // TODO: Authorize that this client user is able to create resources!
 
     web3.personal.unlockAccount(web3.eth.accounts[0], 'iloveethereum');
 

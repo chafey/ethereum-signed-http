@@ -84,6 +84,19 @@ function checkRecipient(request, instance) {
 }
 
 function checkUrl(request, instance) {
+
+  var baseUrl = instance.url();
+  var baseResourceUrl = baseUrl.substr('/resource'.length);
+  var requestUrl = request.url;
+  var requestBaseUrl = requestUrl.substr(0, baseResourceUrl.length);
+  console.log('baseUrl:', baseUrl);
+  console.log('baseResourceUrl:', baseResourceUrl);
+  console.log('requestUrl:', requestUrl);
+  console.log('requestBaseUrl:', requestBaseUrl);
+
+  if(requestBaseUrl !== baseResourceUrl) {
+    throw new HttpError('bad url', 401);// unauthorized
+  }
   /*
 
 
@@ -130,7 +143,7 @@ function sendError(response, error) {
 function sendResource(request, response) {
   console.log("access authorized!")
   response.writeHead(200);
-  response.end("The Medical Record!");
+  response.end("Congratulations, you can access the resource!");
 }
 
 function logRequest(request) {
