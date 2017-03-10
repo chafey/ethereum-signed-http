@@ -3,9 +3,9 @@ import { ReactiveVar } from 'meteor/reactive-var';
 var url = new ReactiveVar("");
 var address = new ReactiveVar("");
 
-function create(_url) {
+function create(_url, _receipient) {
   return new Promise((resolve, reject) => {
-    Meteor.call('create', web3.eth.accounts[0], _url, function(err, resp) {
+    Meteor.call('create', _receipient, _url, function(err, resp) {
       if(err) {
         alert(err);
         return;

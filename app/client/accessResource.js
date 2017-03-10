@@ -58,9 +58,10 @@ function doGet(contractAddress, url) {
 Template.accessResource.events({
   'click button'(e, instance) {
     e.preventDefault();
-    var url = $("#url").val();
+    var requestUrl = $("#requestUrl").val();
+    console.log('requestUrl', requestUrl);
     var contractAddress = resource.address.get();
-    doGet(contractAddress, url);
+    doGet(contractAddress, requestUrl);
   }
 });
 

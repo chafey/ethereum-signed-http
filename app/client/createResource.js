@@ -5,7 +5,9 @@ Template.createResource.events({
     //console.log(e,instance);
     e.preventDefault();
     var url = $('#url').val();
-    resource.create(url);
+    var receipient = $('#recipient').val();
+    console.log('receipient', receipient);
+    resource.create(url, receipient);
   },
   'click #attach'(e, instance) {
     console.log('attach');
